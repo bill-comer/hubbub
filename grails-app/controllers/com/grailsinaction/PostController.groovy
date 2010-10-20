@@ -26,11 +26,11 @@ class PostController {
     redirect(action:'timeline', id:params.id)
   }
   
-  def index = {
+  /*def index = {
     if (!params.id) {
       flash.message "No user in scope"
     }
     redirect(action:'timeline', params:params)
     
-  }
+  }*/
 }
