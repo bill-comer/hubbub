@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="ut-nb-50" name="com.test.JsonAdHocTests" tests="1" time="3.078" timestamp="2010-10-15T10:53:25">
+  <properties />
+  <testcase classname="com.test.JsonAdHocTests" name="test1" time="3.047" />
+  <system-out><![CDATA[--Output from test1--
+{
+   "reference-url": "/questions/14f7ca5f6ff1a5afb9032aa5e533ad95.html",
+   "question": "Strong NE Winds!"
+}
+reference-url = /questions/14f7ca5f6ff1a5afb9032aa5e533ad95.html
+question = Strong NE Winds!
+]]></system-out>
+  <system-err><![CDATA[--Output from test1--
+]]></system-err>
+</testsuite>
