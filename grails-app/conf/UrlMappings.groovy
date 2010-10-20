@@ -6,6 +6,11 @@ class UrlMappings {
 				// apply constraints here
 			}
 		}
+    
+    "/users/$id" {
+      controller = "post"
+      action = "timeline"
+    }
 
 		"/"(view:"/index")
 		"500"(view:'/error')
