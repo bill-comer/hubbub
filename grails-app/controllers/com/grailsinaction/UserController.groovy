@@ -48,8 +48,6 @@ class UserController {
     println "users-" + users
     println "users not null-" + (users != null)
     
-    //println "found users[" + users?.size() + "]"
-    
     return [ users:users, term:params.userId ]
   }
   
