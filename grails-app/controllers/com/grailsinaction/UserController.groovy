@@ -98,8 +98,27 @@ class UserController {
   }
   
   def create = {
-    redirect(action:'register2')
+    redirect(action:'register62')
   }
+  
+  def register62 = {UserRegistrationCommand urc ->
+    println "register62"
+    if (urc.hasErrors()) {
+      println "urc:ooops"
+      return [user:urc]
+    } else {
+      def user = new User (urc.properties)
+      user.profile  = new Profile(urc.properties)
+      if (user.save()) {
+        flash.message = "Welcome abroad, ${urc.fullName?:urc.userId}"
+        redirect(uri:'/user/list')
+      } else {
+        //may be not unique id !!!!!
+      return [user:user]
+      }
+    }
+  }
+  
   
   //def index = { }
 }
