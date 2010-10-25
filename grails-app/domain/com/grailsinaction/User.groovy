@@ -5,7 +5,6 @@ import groovy.lang.Closure;
 import org.springframework.aop.TrueClassFilter;
 
 
-
 class User {
 
   String userId

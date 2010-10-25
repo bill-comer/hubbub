@@ -1,7 +1,0 @@
---Output from test1--
-{
-   "reference-url": "/questions/14f7ca5f6ff1a5afb9032aa5e533ad95.html",
-   "question": "Strong NE Winds!"
-}
-reference-url = /questions/14f7ca5f6ff1a5afb9032aa5e533ad95.html
-question = Strong NE Winds!

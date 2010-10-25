@@ -27,6 +27,9 @@
         <dt>(repeat Password)</dt>
         <dd><g:passwordField name="passwordRepeat" /></dd>
         
+        <dt>date of Birth</dt>
+        <dd><g:datePicker name="dob" precision="day" value="${then}" years="${1900..nowYear}"/></dd>
+        
         <dt>Country:</dt>
         <dd><g:countrySelect name="country" 
               noSelection="['':'Choose your country...']" /></dd>

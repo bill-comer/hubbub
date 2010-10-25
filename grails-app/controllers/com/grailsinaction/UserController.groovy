@@ -1,5 +1,9 @@
 package com.grailsinaction
 
+
+import java.util.Date;
+import java.util.Calendar;
+
 class UserRegistrationCommand {
   
   String userId
@@ -101,18 +105,26 @@ class UserController {
   
   def register62 = {UserRegistrationCommand urc ->
     println "register62"
+    Calendar then = Calendar.getInstance();
+    then.set(Calendar.YEAR, 1970);
+    Date thenDate = then.getTime()
+    Date now = new Date()
+
     if (urc.hasErrors()) {
-      println "urc:ooops"
-      return [user:urc]
+      println "urc:ooops[" + now.getYear() + "]"
+      return [user:urc, nowYear:now.getYear() + 1900, then:thenDate]
     } else {
       def user = new User (urc.properties)
       user.profile  = new Profile(urc.properties)
+      Date dob = params.dob
+      println "DOB:" + dob
+      
       if (user.save()) {
         flash.message = "Welcome abroad, ${urc.fullName?:urc.userId}"
         redirect(uri:'/user/list')
       } else {
         //may be not unique id !!!!!
-      return [user:user]
+      return [user:user, nowYear:now.getYear() + 1900, then:thenDate]
       }
     }
   }
