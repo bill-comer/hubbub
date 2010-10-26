@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="1" failures="0" hostname="ut-nb-50" id="0" name="PostIntegrationTests" package="com.grailsinaction" tests="2" time="0.609" timestamp="2010-10-25T15:20:12">
+  <testsuite errors="0" failures="0" hostname="ut-nb-50" id="0" name="PostIntegrationTests" package="com.grailsinaction" tests="2" time="0.485" timestamp="2010-10-26T09:30:59">
       <properties />
 
-      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testFirstPost" time="0.453" />
+      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testFirstPost" time="0.406" />
 
-      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testSortOrder" time="0.125">
-          <error message="No signature of method: java.util.HashSet.asList() is applicable for argument types: (java.util.LinkedHashMap) values: [[max:2]] Possible solutions: asList(), toList(), wait(), size(), size(), sort()" type="groovy.lang.MissingMethodException">groovy.lang.MissingMethodException: No signature of method: java.util.HashSet.asList() is applicable for argument types: (java.util.LinkedHashMap) values: [[max:2]]
-Possible solutions: asList(), toList(), wait(), size(), size(), sort()
-	at com.grailsinaction.PostIntegrationTests.testSortOrder(PostIntegrationTests.groovy:65)
-</error>
-
-      </testcase>
+      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testSortOrder" time="0.047" />
 
       <system-out><![CDATA[--Output from testFirstPost--
 Post:first post..wahoo.
 --Output from testSortOrder--
-userId[joe], password[secret], dateCreated[Mon Oct 25 16:20:12 BST 2010],
- posts[[content[one], dateCreated[Mon Oct 25 16:20:12 BST 2010
-, content[three], dateCreated[Mon Oct 25 16:20:12 BST 2010
-, content[two], dateCreated[Mon Oct 25 16:20:12 BST 2010
+userId[joe], password[secret], dateCreated[Tue Oct 26 10:30:59 BST 2010],
+ posts[[content[2], dateCreated[Tue Oct 26 10:30:59 BST 2010
+, content[3], dateCreated[Tue Oct 26 10:30:59 BST 2010
+, content[6], dateCreated[Tue Oct 26 10:30:59 BST 2010
+, content[5], dateCreated[Tue Oct 26 10:30:59 BST 2010
+, content[4], dateCreated[Tue Oct 26 10:30:59 BST 2010
+, content[1], dateCreated[Tue Oct 26 10:30:59 BST 2010
 ]]
-Post:content[one], dateCreated[Mon Oct 25 16:20:12 BST 2010
+Post:content[2], dateCreated[Tue Oct 26 10:30:59 BST 2010
 
-Post:content[three], dateCreated[Mon Oct 25 16:20:12 BST 2010
+Post:content[3], dateCreated[Tue Oct 26 10:30:59 BST 2010
 
-Post:content[two], dateCreated[Mon Oct 25 16:20:12 BST 2010
+Post:content[6], dateCreated[Tue Oct 26 10:30:59 BST 2010
 
+Post:content[5], dateCreated[Tue Oct 26 10:30:59 BST 2010
+
+Post:content[4], dateCreated[Tue Oct 26 10:30:59 BST 2010
+
+Post:content[1], dateCreated[Tue Oct 26 10:30:59 BST 2010
+
+sublist Post:5
+sublist Post:1
 ]]></system-out>
 
       <system-err><![CDATA[--Output from testFirstPost--

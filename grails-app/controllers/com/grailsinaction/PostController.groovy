@@ -8,18 +8,25 @@ class PostController {
   def postService
   
   def timeline = {
-    println "timeline[" + params+ "], id[" + params.id + "]"
+    println "timeline[" + params+ "]"
     if (params.id) {
       def user = User.findByUserId(params.id)
       
       
-      //def allposts = user?.posts
-      //def posts = allposts.toList()
+      def allposts = user?.posts as List
       
-      def posts = Post.list(max:params.max?:2, offset:params.offset?:0)
-      //posts = Post.list()
+      def max=params.max?:(allposts.size()>2 ? 2: allposts.size())
+      def offset=params.offset?:(0)
       
-      def postCount = Post.count()
+      offset = offset as int
+      max = max as int
+      
+      def start = offset*max > allposts.size()-1 ? allposts.size()-1 : offset*max
+      def end = ((offset*max)+max-1) > allposts.size()-1 ? allposts.size() -1 : ((offset*max)+max-1)
+      
+      def posts = allposts.size() > 0?allposts[(start)..(end)]:allposts
+      
+      def postCount = allposts.size()
       
       println "max:" + params.max + ""
       println "posts.size:" + posts.size() + ", postCount:" + postCount

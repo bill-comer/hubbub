@@ -37,29 +37,7 @@
     </p>
   </div>      
         
-  <!-- 
-  <h1>
-    <g:if test="${user?.profile}">
-       Timeline for ${user?.profile?.fullName}
-    </g:if>
-  </h1>
-  
-  <div class="allPosts">
-  
-   <g:each in="${user?.posts}" var="post">
-     <div class="postEntry">
-       <div class="postText">
-         ${post?.content}
-       </div>
-       <div class="postDate">
-         ${post?.dateCreated}
-       </div>
-     </div>
-   </g:each>
-
-  </div>
-  
-   -->
+ 
   <h1>
     <g:if test="${user?.profile}">
        Ano Timeline for ${user?.profile?.fullName}
@@ -68,7 +46,7 @@
   
     <div class="paginateButtons">
       <g:paginate 
-          id="fred" next="Forward" prev="Back"
+          id="${user.userId}" next="Forward" prev="Back"
           total="${postCount}" max="2" >
       </g:paginate>
     </div>
