@@ -11,7 +11,20 @@ class PostController {
     println "timeline[" + params+ "], id[" + params.id + "]"
     if (params.id) {
       def user = User.findByUserId(params.id)
-      [user:user]
+      
+      
+      //def allposts = user?.posts
+      //def posts = allposts.toList()
+      
+      def posts = Post.list(max:params.max?:2, offset:params.offset?:0)
+      //posts = Post.list()
+      
+      def postCount = Post.count()
+      
+      println "max:" + params.max + ""
+      println "posts.size:" + posts.size() + ", postCount:" + postCount
+      
+      [user:user, postCount:postCount, posts:posts]
     }
   }
   
@@ -25,6 +38,18 @@ class PostController {
     
     redirect(action:'timeline', id:params.id)
   }
+  
+  def listall = {
+    def user = User.findByUserId(params.id)
+    
+    def allposts = user?.posts
+    def posts = allposts.asList()
+    def postCount = posts.size()
+    
+    println "posts.size:" + posts.size() + ", postCount:" + postCount
+    
+    [posts, postCount]
+ }
   
   /*def index = {
     if (!params.id) {

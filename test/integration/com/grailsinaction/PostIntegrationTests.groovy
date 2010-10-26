@@ -59,6 +59,14 @@ class PostIntegrationTests extends GrailsUnitTestCase {
         println "Post:" + it
       }
       
+      def allPosts = foundUser.posts.asList()
+      assertEquals 3, allPosts.size()
+      
+      allPosts = foundUser.posts.asList()
+      assertEquals 2, allPosts.size()
+      
+      
+      
     }
     
     

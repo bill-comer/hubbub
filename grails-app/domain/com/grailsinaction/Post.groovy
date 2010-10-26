@@ -4,7 +4,6 @@ import java.util.Date;
 
 class Post {
   
-
   String content
   Date dateCreated = new Date()
   

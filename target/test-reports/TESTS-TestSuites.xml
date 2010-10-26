@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="ut-nb-50" id="0" name="JsonAdHocTests" package="com.test" tests="1" time="3.078" timestamp="2010-10-15T10:53:25">
+  <testsuite errors="1" failures="0" hostname="ut-nb-50" id="0" name="PostIntegrationTests" package="com.grailsinaction" tests="2" time="0.609" timestamp="2010-10-25T15:20:12">
       <properties />
 
-      <testcase classname="com.test.JsonAdHocTests" name="test1" time="3.047" />
+      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testFirstPost" time="0.453" />
 
-      <system-out><![CDATA[--Output from test1--
-{
-   "reference-url": "/questions/14f7ca5f6ff1a5afb9032aa5e533ad95.html",
-   "question": "Strong NE Winds!"
-}
-reference-url = /questions/14f7ca5f6ff1a5afb9032aa5e533ad95.html
-question = Strong NE Winds!
+      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testSortOrder" time="0.125">
+          <error message="No signature of method: java.util.HashSet.asList() is applicable for argument types: (java.util.LinkedHashMap) values: [[max:2]] Possible solutions: asList(), toList(), wait(), size(), size(), sort()" type="groovy.lang.MissingMethodException">groovy.lang.MissingMethodException: No signature of method: java.util.HashSet.asList() is applicable for argument types: (java.util.LinkedHashMap) values: [[max:2]]
+Possible solutions: asList(), toList(), wait(), size(), size(), sort()
+	at com.grailsinaction.PostIntegrationTests.testSortOrder(PostIntegrationTests.groovy:65)
+</error>
+
+      </testcase>
+
+      <system-out><![CDATA[--Output from testFirstPost--
+Post:first post..wahoo.
+--Output from testSortOrder--
+userId[joe], password[secret], dateCreated[Mon Oct 25 16:20:12 BST 2010],
+ posts[[content[one], dateCreated[Mon Oct 25 16:20:12 BST 2010
+, content[three], dateCreated[Mon Oct 25 16:20:12 BST 2010
+, content[two], dateCreated[Mon Oct 25 16:20:12 BST 2010
+]]
+Post:content[one], dateCreated[Mon Oct 25 16:20:12 BST 2010
+
+Post:content[three], dateCreated[Mon Oct 25 16:20:12 BST 2010
+
+Post:content[two], dateCreated[Mon Oct 25 16:20:12 BST 2010
+
 ]]></system-out>
 
-      <system-err><![CDATA[--Output from test1--
+      <system-err><![CDATA[--Output from testFirstPost--
+--Output from testSortOrder--
 ]]></system-err>
 
   </testsuite>
